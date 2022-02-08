@@ -14,36 +14,30 @@ then
 fi
 
 # apply rabbitmq service
-$kubectl apply -f $prefix/rabbitmq-config.yaml &
-sleep 2
-$kubectl apply -f $prefix/rabbitmq.yaml &
-sleep 2
+$kubectl apply -f $prefix/rabbitmq-config.yaml &&
+$kubectl apply -f $prefix/rabbitmq.yaml &&
 
 # apply redis service
-$kubectl apply -f $prefix/redis-config.yaml &
-sleep 2
-$kubectl apply -f $prefix/redis.yaml &
-sleep 2
+$kubectl apply -f $prefix/redis-config.yaml &&
+$kubectl apply -f $prefix/redis.yaml &&
 
 # apply mongo service for each microservice
-$kubectl apply -f $prefix/mongo-config.yaml &
-sleep 2
+$kubectl apply -f $prefix/mongo-config.yaml &&
 for microservice in "customer" "movie" "order" "payment"
 do
-	$kubectl apply -f $prefix/${microservice}-mongo.yaml &
+	$kubectl apply -f $prefix/${microservice}-mongo.yaml
 done
-sleep 5
+sleep 3
 
 # apply all microservices
 for microservice in "customer" "movie" "cart" "order" "payment"
 do
-	$kubectl apply -f $prefix/${microservice}.yaml &
+	$kubectl apply -f $prefix/${microservice}.yaml
 done
-sleep 5
+sleep 3
 
 # apply ingress controller
-$kubectl apply -f $prefix/ingress.yaml &
-sleep 2
+$kubectl apply -f $prefix/ingress.yaml &&
 
 # apply client UI
 $kubectl apply -f $prefix/webapp.yaml
