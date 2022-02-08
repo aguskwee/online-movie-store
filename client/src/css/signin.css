@@ -1,0 +1,23 @@
+.signin-form {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid #ddd;
+	border-radius: 0.25rem;
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+	padding: 20px 40px;
+	margin-top: 15vh;
+}
+
+.signin-form p.error {
+	margin-bottom: 10px;
+	color: #fc4b6c;
+}
+
+.signin-form h4 {
+	padding-left: 0;
+	margin-bottom: 20px;
+}
+
+.signin-form p {
+	padding-left: 0;
+}

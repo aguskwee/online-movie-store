@@ -1,0 +1,32 @@
+h3 {
+	padding-left: 0;
+}
+
+h5 {
+	font-size: 1.25rem !important;
+	margin-top: 20px !important;
+}
+
+.fa-times-circle {
+	color: #dc3545;
+}
+.fa-clock {
+	color: #ffc107;
+}
+.fa-check-circle {
+	color: #198754;
+}
+ul {
+	list-style: none;
+	padding-left: 0 !Important;
+	margin-top: 20px !important;
+}
+
+ul > li {
+	display: inline-block;
+	padding: 0 10px 10px 0;
+}
+
+img {
+	max-height: 200px;
+}

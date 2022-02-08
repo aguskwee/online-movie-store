@@ -1,0 +1,25 @@
+FROM node:17.4.0
+MAINTAINER Agus Kwee (aguskwee@smu.edu.sg)
+
+# update and install necessary packages
+RUN apt-get update && \
+	apt-get upgrade -y
+
+# get parameter arguments
+ARG REDIS_URL
+ARG RABBITMQ_URL
+
+RUN mkdir cart
+WORKDIR cart
+
+# copy files
+COPY cart.js package.json ./
+
+# install dependencies
+RUN npm install
+
+# environment variables
+ENV REDIS_URL=$RABBIT_URL
+ENV RABBITMQ_URL=$RABBITMQ_URL
+
+ENTRYPOINT ["npm", "start"]

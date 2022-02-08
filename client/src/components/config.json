@@ -1,0 +1,16 @@
+{
+	"AUTHENTICATION_URL": "http://localhost:10000/authenticate-user/",
+	"REGISTER_USER_URL": "http://localhost:10000/register-user/",
+	"EDIT_CUSTOMER_URL": "http://localhost:10000/edit-user/",
+	"GET_CUSTOMER_URL": "http://localhost:10000/get-customer-details/",
+
+	"MOVIE_DETAIL_URL": "http://localhost:10001/get-movie-details/",
+	"MOVIE_LIST_URL": "http://localhost:10001/get-movies-list/",
+
+	"CUSTOMER_CART_URL": "http://localhost:10002/customer-movies/",
+	"ADD_TO_CART_URL": "http://localhost:10002/add-movie/",
+	"REMOVE_FROM_CART_URL": "http://localhost:10002/remove-movie/",
+	
+	"NEW_ORDER_URL": "http://localhost:10003/new-order/",
+	"ORDER_STATUS_URL": "http://localhost:10003/check-order-status/"
+}

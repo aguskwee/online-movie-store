@@ -1,0 +1,23 @@
+FROM node:17.4.0
+MAINTAINER Agus Kwee (aguskwee@smu.edu.sg)
+
+# update and install necessary packages
+RUN apt-get update && \
+	apt-get upgrade -y
+
+# get parameter arguments
+ARG MONGO_URL
+
+RUN mkdir movies
+WORKDIR movies
+
+# copy files
+COPY movie.js movieModel.js package.json ./
+
+# install dependencies
+RUN npm install
+
+# environment variables
+ENV MONGO_URL=$MONGO_URL
+
+ENTRYPOINT ["npm", "start"]

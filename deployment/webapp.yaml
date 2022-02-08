@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: movie-store-webapp
+  labels:
+    app: movie-store-webapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: movie-store-webapp
+  template:
+    metadata:
+      labels:
+        app: movie-store-webapp
+    spec:
+      containers:
+      - name: movie-store-webapp
+        image: moviewebapp:v1
+        ports:
+        - containerPort: 3000
+        env:
+        - name: CUSTOMER_API_URL
+          value: /api/customer
+        - name: MOVIE_API_URL
+          value: /api/movie
+        - name: CART_API_URL
+          value: /api/cart
+        - name: ORDER_API_URL
+          value: /api/order
+        - name: REACT_APP_AUTHENTICATION_URL
+          value: "$(CUSTOMER_API_URL)/authenticate-user/"
+        - name: REACT_APP_REGISTER_USER_URL
+          value: "$(CUSTOMER_API_URL)/register-user/"
+        - name: REACT_APP_EDIT_CUSTOMER_URL
+          value: "$(CUSTOMER_API_URL)/edit-user/"
+        - name: REACT_APP_GET_CUSTOMER_URL
+          value: "$(CUSTOMER_API_URL)/get-customer-details/"
+        - name: REACT_APP_MOVIE_DETAIL_URL
+          value: "$(MOVIE_API_URL)/get-movie-details/"
+        - name: REACT_APP_MOVIE_LIST_URL
+          value: "$(MOVIE_API_URL)/get-movies-list/"
+        - name: REACT_APP_CUSTOMER_CART_URL
+          value: "$(CART_API_URL)/customer-movies/"
+        - name: REACT_APP_ADD_TO_CART_URL
+          value: "$(CART_API_URL)/add-movie/"
+        - name: REACT_APP_REMOVE_FROM_CART_URL
+          value: "$(CART_API_URL)/remove-movie/"
+        - name: REACT_APP_NEW_ORDER_URL
+          value: "$(ORDER_API_URL)/new-order/"
+        - name: REACT_APP_ORDER_STATUS_URL
+          value: "$(ORDER_API_URL)/check-order-status/"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: movie-store-service
+spec:
+  selector:
+    app: movie-store-webapp
+  ports:
+  - protocol: TCP
+    port: 3000
+    targetPort: 3000

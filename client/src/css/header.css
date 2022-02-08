@@ -1,0 +1,22 @@
+.navbar {
+	background-color: #1e88e5;
+	color:  #fff;
+	width: 100%;
+	height: 70px;
+}
+
+span.badge {
+	font-size: 0.8rem;
+	padding: 2px 4px;
+}
+
+i.fas {
+	font-size: 1.3rem;
+	cursor:  pointer;
+	color: #fff;
+}
+
+header a, header a:hover {
+	color: #fff;
+	text-decoration: none;
+}

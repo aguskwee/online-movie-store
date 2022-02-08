@@ -1,0 +1,26 @@
+FROM node:17.4.0
+MAINTAINER Agus Kwee (aguskwee@smu.edu.sg)
+
+# update and upgrade base class
+RUN apt-get update && \
+	apt-get upgrade -y
+
+RUN mkdir client
+WORKDIR client
+
+# copy files
+COPY package.json ./
+RUN mkdir public
+COPY public/index.html ./public/
+RUN mkdir src src/components src/css src/images
+COPY ./src/App.js ./src/index.js ./src/
+COPY ./src/components/*.js*  ./src/components/
+COPY ./src/css/*.css ./src/css/
+COPY ./src/images/*.png ./src/images/
+
+
+# install dependencies
+RUN npm install
+
+# run application
+ENTRYPOINT ["npm", "start"]

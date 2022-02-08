@@ -1,0 +1,12 @@
+ul h5 {
+	font-size: 1.25rem;
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+}
+
+p.price {
+	font-size: 1.2rem;
+	font-weight: bold;
+	font-style: italic;
+	text-align: right;
+}

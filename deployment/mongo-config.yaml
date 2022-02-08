@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: mongo-config
+data:
+    customer-mongo-url: customer-mongo-service
+    customer-mongo-port: "27017"
+    movie-mongo-url: movie-mongo-service
+    movie-mongo-port: "27018"
+    order-mongo-url: order-mongo-service
+    order-mongo-port: "27019"
+    payment-mongo-url: payment-mongo-service
+    payment-mongo-port: "27020"

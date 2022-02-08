@@ -1,0 +1,37 @@
+ul {
+	list-style: none;
+	padding-left: 0;
+	margin-top: 20px;
+}
+
+ul > li {
+	display: inline-block;
+	padding: 0 10px 10px 0;
+}
+
+ul > li .body {
+	padding: 10px 15px 20px;
+}
+
+img {
+	max-height: 250px;
+}
+
+p.title {
+	font-size: 1.1rem;
+	font-weight: bold;
+}
+
+p.genre, p.runtime {
+	display: inline-block;
+	color:  #888;
+	margin-bottom: 5px;
+}
+p.runtime {
+	margin-left: 20px;
+}
+
+p.price {
+	font-weight: 500;
+	font-size: 0.9rem;
+}
