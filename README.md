@@ -24,3 +24,8 @@ The application can be deployed using Kubernetes framework.
 - Change config.json for respective URL
 - Do npm start to activate client UI
 
+
+## Changelogs
+
+### version 1.0.0
+* Initial commit
