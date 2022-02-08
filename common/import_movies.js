@@ -3,7 +3,7 @@ const readline = require('readline')
 const axios = require('axios')
 
 const rl = readline.createInterface({
-	input: fs.createReadStream('title.basics.tsv'),
+	input: fs.createReadStream('title.basics.c1000.tsv'),
 	output: process.stdout,
 	terminal: false
 })
