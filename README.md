@@ -5,9 +5,12 @@ This module is to demonstrate an application built based on the microservices ar
 ## Introduction
 This module built using five different microservices with their own local storage.
 The inter communication among microservices will use rabbitMQ as a message broker.
-As an API gateway, this module use nginx.
-The application can be deployed using Kubernetes franework.
+As an API gateway, this module uses nginx.
+The application can be deployed using Kubernetes framework.
 
+## Solution architecture
+
+![Microservices image](https://github.com/aguskwee/online-movie-store/blob/master/client/src/images/solution-arch.png)
 
 ## How to deploy
 1. Using kubernetes 
@@ -16,7 +19,7 @@ The application can be deployed using Kubernetes franework.
 ```
 
 2. Manually
-- You need to install and setup redis, rabbitmq, and mongodb (4 instances with different ports)
+- You need to install and to setup redis, rabbitmq, and mongodb (4 mongo instances with different ports)
 - Do npm start on each microservies, customer, movie, cart, order and payment
 - Change config.json for respective URL
 - Do npm start to activate client UI
