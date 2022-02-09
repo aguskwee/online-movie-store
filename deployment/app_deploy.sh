@@ -16,10 +16,12 @@ fi
 # apply rabbitmq service
 $kubectl apply -f $prefix/rabbitmq-config.yaml &&
 $kubectl apply -f $prefix/rabbitmq.yaml &&
+sleep 5 # make sure it set up properly
 
 # apply redis service
 $kubectl apply -f $prefix/redis-config.yaml &&
 $kubectl apply -f $prefix/redis.yaml &&
+sleep 3
 
 # apply mongo service for each microservice
 $kubectl apply -f $prefix/mongo-config.yaml &&
