@@ -14,6 +14,9 @@ The application can be deployed using Kubernetes framework.
 
 ## How to deploy
 1. Using kubernetes 
+
+Assuming you already have all the containers / images of microservices in dockerhub or local docker repository.
+Then run the following command to deploy application into kubernetes
 ```
 ./app_deploy.sh <kubectl command line> <folder for kubernetes yaml>
 ```
